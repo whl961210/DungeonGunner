@@ -1,0 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GameResources : MonoBehaviour
+{
+    private static GameResources instance;
+    public static GameResources Instance 
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = Resources.Load<GameResources>("GameResources");
+            }
+            return instance;
+        }
+    }
+    #region Header DUNGEON
+    [Space(10)]
+    [Header("DUNGEON")]
+    #endregion
+    #region Tooltip
+    [Tooltip("This is the RoomNodeTypeListSO that will be used to generate the dungeon.")]
+    #endregion
+    public RoomNodeTypeListSO roomNodeTypeList;
+}
