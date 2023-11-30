@@ -115,6 +115,11 @@ public class RoomNodeSO : ScriptableObject
         DragNode(currentEvent.delta);
         GUI.changed = true;
     }
+    private void DragNode(Vector2 delta)
+    {
+        rect.position += delta;
+        EditorUtility.SetDirty(this);
+    }
 #endif
 
     #endregion Editor code
