@@ -54,7 +54,7 @@ public class RoomNodeGraphEditor : EditorWindow
     }
     private void ProcessEvents(Event currentEvent)
     {
-        if (currentRoomNodeGraph == null || currentRoomNode.isLeftClickDragging == false)
+        if (currentRoomNode == null || currentRoomNode.isLeftClickDragging == false)
         {
             currentRoomNode = IsMouseOverRoomNode(currentEvent);
         }
@@ -76,6 +76,7 @@ public class RoomNodeGraphEditor : EditorWindow
                 return currentRoomNodeGraph.roomNodeList[i];
             }
         }
+        return null;
     }
     private void ProcessRoomNodeGraphEvents(Event currentEvent)
     {

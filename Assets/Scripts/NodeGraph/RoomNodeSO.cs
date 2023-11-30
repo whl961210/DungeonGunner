@@ -53,23 +53,30 @@ public class RoomNodeSO : ScriptableObject
         return roomArray;
     }
     public void ProcessEvents(Event currentEvent)
+{
+    switch (currentEvent.type)
     {
-        //process mouse down event
+        // Process mouse down event
         case EventType.MouseDown:
             ProcessMouseDownEvent(currentEvent);
             break;
-        //process mouse drag event
+
+        // Process mouse drag event
         case EventType.MouseDrag:
             ProcessMouseDragEvent(currentEvent);
             break;
-        //process mouse up event
+
+        // Process mouse up event
         case EventType.MouseUp:
             ProcessMouseUpEvent(currentEvent);
             break;
         
+        // Default case
         default:
             break;
     }
+}
+
     private void ProcessMouseDownEvent(Event currentEvent)
     {
         if (currentEvent.button == 0)
