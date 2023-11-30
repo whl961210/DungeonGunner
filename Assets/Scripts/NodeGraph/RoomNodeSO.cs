@@ -15,6 +15,8 @@ public class RoomNodeSO : ScriptableObject
     #region Editor code
 #if UNITY_EDITOR
     [HideInInspector] public Rect rect;
+    [HideInInspector] public bool isLeftClickDragging = false;
+    [HideInInspector] public bool isSelected = false;
     public void Initialise(Rect rect, RoomNodeGraphSO roomNodeGraph, RoomNodeTypeSO roomNodeType)
     {
         this.rect = rect;
@@ -49,6 +51,24 @@ public class RoomNodeSO : ScriptableObject
             }
         }
         return roomArray;
+    }
+    public void ProcessEvents(Event currentEvent)
+    {
+        //process mouse down event
+        case EventType.MouseDown:
+            ProcessMouseDownEvent(currentEvent);
+            break;
+        //process mouse drag event
+        case EventType.MouseDrag:
+            ProcessMouseDragEvent(currentEvent);
+            break;
+        //process mouse up event
+        case EventType.MouseUp:
+            ProcessMouseUpEvent(currentEvent);
+            break;
+        
+        default:
+            break;
     }
 
 #endif
