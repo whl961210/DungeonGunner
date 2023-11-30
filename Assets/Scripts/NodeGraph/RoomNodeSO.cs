@@ -102,6 +102,19 @@ public class RoomNodeSO : ScriptableObject
             isLeftClickDragging = false;
         }
     }
+    private void ProcessMouseDragEvent(Event currentEvent)
+    {
+        if (currentEvent.button == 0)
+        {
+            ProcessLeftClickDragEvent(currentEvent);
+        }
+    }
+    private void ProcessLeftClickDragEvent(Event currentEvent)
+    {
+        isLeftClickDragging = true;
+        DragNode(currentEvent.delta);
+        GUI.changed = true;
+    }
 #endif
 
     #endregion Editor code
