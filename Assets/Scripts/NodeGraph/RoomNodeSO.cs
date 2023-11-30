@@ -88,6 +88,20 @@ public class RoomNodeSO : ScriptableObject
             isSelected = true;
         }
     }
+    private void ProcessMouseUpEvent(Event currentEvent)
+    {
+        if (currentEvent.button == 0)
+        {
+            ProcessLeftClickUpEvent();
+        }
+    }
+    private void ProcessLeftClickUpEvent()
+    {
+        if (isLeftClickDragging == true)
+        {
+            isLeftClickDragging = false;
+        }
+    }
 #endif
 
     #endregion Editor code
