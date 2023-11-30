@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca7ccbb2d38df5419713cd7d9005b02, type: 3}
+  m_Name: RoomNodeGraph_
+  m_EditorClassIdentifier: 
+  roomNodeTypeList: {fileID: 0}
+  roomNodeList:
+  - {fileID: 360731512962346341}
+  - {fileID: 977538454956156138}
+--- !u!114 &360731512962346341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ccba3c2d46e722429ef806788971ce6, type: 3}
+  m_Name: RoomNode
+  m_EditorClassIdentifier: 
+  id: 4862a92c-d34c-48c0-9b4a-5a3c76494ca5
+  parentRoomNodeIDList: []
+  childRoomNodeIDList: []
+  roomNodeGraph: {fileID: 11400000}
+  roomNodeType: {fileID: 11400000, guid: 26ee927b1dbcdf64f93173ed5596c00d, type: 2}
+  roomNodeTypeList: {fileID: 11400000, guid: c76b31522b93b774982721f9fd17f97a, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 707
+    y: 451
+    width: 160
+    height: 75
+--- !u!114 &977538454956156138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ccba3c2d46e722429ef806788971ce6, type: 3}
+  m_Name: RoomNode
+  m_EditorClassIdentifier: 
+  id: 1d49d191-a83a-4380-b3f6-84c8a659daf2
+  parentRoomNodeIDList: []
+  childRoomNodeIDList: []
+  roomNodeGraph: {fileID: 11400000}
+  roomNodeType: {fileID: 11400000, guid: 26ee927b1dbcdf64f93173ed5596c00d, type: 2}
+  roomNodeTypeList: {fileID: 11400000, guid: c76b31522b93b774982721f9fd17f97a, type: 2}
+  rect:
+    serializedVersion: 2
+    x: 1110
+    y: 453
+    width: 160
+    height: 75

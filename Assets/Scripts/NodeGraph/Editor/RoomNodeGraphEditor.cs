@@ -1,13 +1,13 @@
 using UnityEngine;
-using UnittEditor.Callbacks;
+using UnityEditor.Callbacks;
 using UnityEditor;
 
 public class RoomNodeGraphEditor : EditorWindow
 
 {
     private GUIStyle roomNodeStyle;
-    private static RoomNodeGrapgSO currentRoomNodeGraph;
-    private RoomNodeTypesListSO roomNodeTypesList;
+    private static RoomNodeGraphSO currentRoomNodeGraph;
+    private RoomNodeTypeListSO roomNodeTypeList;
     private const float nodeWidth = 160f;
     private const float nodeHeight = 75f;
     private const int nodePadding = 25;
@@ -24,12 +24,12 @@ public class RoomNodeGraphEditor : EditorWindow
         roomNodeStyle.normal.textColor = Color.white;
         roomNodeStyle.padding = new RectOffset(nodePadding, nodePadding, nodePadding, nodePadding);
         roomNodeStyle.border = new RectOffset(nodeBorder, nodeBorder, nodeBorder, nodeBorder);  
-        roomNodeTypesList = GameResources.Instance.roomNodeTypeList;
+        roomNodeTypeList = GameResources.Instance.roomNodeTypeList;
     }
     [OnOpenAsset(0)]
     public static bool OnDoubleClickAsset(int instanceID, int line)
     {
-        RoomNodeGrapgSo roomNodeGraph = EditorUtility.InstanceIDToObject(instanceID) as RoomNodeGrapgSo;
+        RoomNodeGraphSO roomNodeGraph = EditorUtility.InstanceIDToObject(instanceID) as RoomNodeGraphSO;
         if (roomNodeGraph != null)
         {
             OpenWindow();
@@ -46,7 +46,7 @@ public class RoomNodeGraphEditor : EditorWindow
         }
         else
         {
-            ProcessNodeEvents(Event.current);
+            ProcessEvents(Event.current);
             DrawRoomNodes();
         }
         if (GUI.changed) Repaint();
@@ -81,15 +81,23 @@ public class RoomNodeGraphEditor : EditorWindow
     }
     private void CreateRoomNode(object mousePositionObject)
     {
-       CreateRoomNode(mousePositionObject, roomNodeTypesList.list.Find(x => x.isNone));
+       CreateRoomNode(mousePositionObject, roomNodeTypeList.list.Find(x => x.isNone));
     }
     private void CreateRoomNode(object mousePositionObject, RoomNodeTypeSO roomNodeType)
     {
         Vector2 mousePosition = (Vector2)mousePositionObject;
         RoomNodeSO roomNode = ScriptableObject.CreateInstance<RoomNodeSO>();
         currentRoomNodeGraph.roomNodeList.Add(roomNode);
-        roomNode.Initialise(new Rect(moustPosition, new Vector2(nodeWidth, nodeHeight)), currentRoomNodeGraph,roomNodeType);
+        roomNode.Initialise(new Rect(mousePosition, new Vector2(nodeWidth, nodeHeight)), currentRoomNodeGraph,roomNodeType);
         AssetDatabase.AddObjectToAsset(roomNode, currentRoomNodeGraph);
         AssetDatabase.SaveAssets();
+    }
+    private void DrawRoomNodes()
+    {
+        foreach (RoomNodeSO roomNode in currentRoomNodeGraph.roomNodeList)
+        {
+            roomNode.Draw(roomNodeStyle);
+        }
+        GUI.changed = true;
     }
 }
