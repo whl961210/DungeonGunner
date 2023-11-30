@@ -70,7 +70,24 @@ public class RoomNodeSO : ScriptableObject
         default:
             break;
     }
-
+    private void ProcessMouseDownEvent(Event currentEvent)
+    {
+        if (currentEvent.button == 0)
+        {
+            ProcessLeftClickDownEvent();
+        }
+    }
+    private void ProcessLeftClickDownEvent()
+    {
+        if (isSelected == true)
+        {
+            isSelected = false;
+        }
+        else
+        {
+            isSelected = true;
+        }
+    }
 #endif
 
     #endregion Editor code
