@@ -58,7 +58,7 @@ public class RoomNodeGraphEditor : EditorWindow
         {
             currentRoomNode = IsMouseOverRoomNode(currentEvent);
         }
-        if (currentRoomNode == null)
+        if (currentRoomNode == null || currentRoomNodeGraph.roomNodeToDrawFrom != null)
         {
             ProcessRoomNodeGraphEvents(currentEvent);
         }
@@ -85,6 +85,9 @@ public class RoomNodeGraphEditor : EditorWindow
             case EventType.MouseDown:
                 ProcessMouseDownEvent(currentEvent);
                 break;
+            case EventType.MouseDrag:
+                ProcessMouseDragEvent(currentEvent);
+                break;
             default:
                 break;
         }
@@ -106,6 +109,25 @@ public class RoomNodeGraphEditor : EditorWindow
         {
             ShowContextMenu(currentEvent.mousePosition);
         }
+    }
+    private void ProcessMouseDragEvent(Event currentEvent)
+    {
+        if (currentEvent.button == 1)
+        {
+            ProcessRightClickDragEvent(currentEvent);
+        }
+    }
+    private void ProcessRightClickDragEvent(Event currentEvent)
+    {
+        if (currentRoomNodeGraph.roomNodeToDrawFrom != null)
+        {
+            DragConnectingLine(currentEvent.delta);
+            GUI.changed = true;
+        }
+    }
+    public void DragConnectingLine(Vector2 delta)
+    {
+        currentRoomNodeGraph.linePosition += delta;
     }
     private void ShowContextMenu(Vector2 mousePosition)
     {
