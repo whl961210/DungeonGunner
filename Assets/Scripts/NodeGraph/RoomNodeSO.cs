@@ -143,6 +143,11 @@ public class RoomNodeSO : ScriptableObject
         childRoomNodeIDList.Add(childRoomNodeID);
         return true;
     }
+    public bool AddParentRoomNodeIDtToRoomNode(string parentRoomNodeID)
+    {
+        parentRoomNodeIDList.Add(parentRoomNodeID);
+        return true;
+    }
 #endif
 
     #endregion Editor code
