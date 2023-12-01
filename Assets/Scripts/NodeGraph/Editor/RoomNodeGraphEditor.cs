@@ -129,6 +129,14 @@ public class RoomNodeGraphEditor : EditorWindow
     {
         if(currentEvent.button == 1 && currentRoomNodeGraph.roomNodeToDrawFrom != null)
         {
+            RoomNodeSO roomNode = IsMouseOverRoomNode(currentEvent);
+            if (roomNode != null)
+            {
+                if(currentRoomNodeGraph.roomNodeToDrawFrom.AddChildRoomNodeIDtToRoomNode(roomNode.roomNodeID))
+                {
+                    roomNode.AddParentRoomNodeIDToRoomNode(currentRoomNodeGraph.roomNodeToDrawFrom.roomNodeID);
+                }
+            }
             ClearLineDrag();
         }
     }
