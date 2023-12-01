@@ -86,6 +86,7 @@ public class RoomNodeSO : ScriptableObject
     }
     private void ProcessLeftClickDownEvent()
     {
+        Selection.activeObject = this;
         if (isSelected == true)
         {
             isSelected = false;
