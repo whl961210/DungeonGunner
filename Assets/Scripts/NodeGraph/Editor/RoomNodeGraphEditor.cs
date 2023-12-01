@@ -50,6 +50,7 @@ public class RoomNodeGraphEditor : EditorWindow
         {
             DrawDraggedLine();
             ProcessEvents(Event.current);
+            DrawRoomConnections();
             DrawRoomNodes();
         }
         if (GUI.changed) Repaint();
@@ -177,6 +178,7 @@ public class RoomNodeGraphEditor : EditorWindow
         roomNode.Initialise(new Rect(mousePosition, new Vector2(nodeWidth, nodeHeight)), currentRoomNodeGraph,roomNodeType);
         AssetDatabase.AddObjectToAsset(roomNode, currentRoomNodeGraph);
         AssetDatabase.SaveAssets();
+        currentRoomNodeGraph.OnValidate();
     }
     private void DrawRoomNodes()
     {
@@ -191,5 +193,22 @@ public class RoomNodeGraphEditor : EditorWindow
         currentRoomNodeGraph.roomNodeToDrawFrom = null;
         currentRoomNodeGraph.linePosition = Vector2.zero;
         GUI.changed = true;
+    }
+    private void DrawRoomConnections()
+    {
+        foreach (RoomNodeSO roomNode in currentRoomNodeGraph.roomNodeList)
+        {
+            if (roomNode.childRoomNodeIDList.Count > 0)
+            {
+                foreach (string childRoomNodeID in roomNode.childRoomNodeIDList)
+                {
+                    if(currentRoomNodeGraph.roomNodeDictionary.ContainsKey(childRoomNodeID))
+                    {
+                        DrawConnectionLine(roomNode, currentRoomNodeGraph.roomNodeDictionary[childRoomNodeID]);
+                        GUI.changed = true;
+                    }
+                }
+            }
+        }
     }
 }
