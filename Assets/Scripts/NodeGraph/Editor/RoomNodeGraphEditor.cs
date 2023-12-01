@@ -13,6 +13,7 @@ public class RoomNodeGraphEditor : EditorWindow
     private const float nodeHeight = 75f;
     private const int nodePadding = 25;
     private const int nodeBorder = 12;
+    private const float connectingLineWidth = 3f;
     [MenuItem("Room Node Graph Editor", menuItem = "Window/Dungeon Editor/Room Node Graph Editor")]
     private static void OpenWindow()
     {
@@ -47,10 +48,21 @@ public class RoomNodeGraphEditor : EditorWindow
         }
         else
         {
+            DrawDraggedLine();
             ProcessEvents(Event.current);
             DrawRoomNodes();
         }
         if (GUI.changed) Repaint();
+    }
+
+    private void DrawDraggedLine()
+    {
+        if(currentRoomNodeGraph.linePosition != Vector2.zero)
+        {
+            Handles.DrawBezier(currentRoomNodeGraph.roomNodeToDrawLineFrom.rect.center, currentRoomNodeGraph.linePosition, 
+            currentRoomNodeGraph.roomNodeToDrawLineFrom.rect.center, currentRoomNodeGraph.linePosition, Color.white, null, 
+            connectingLineWidth);
+        }
     }
     private void ProcessEvents(Event currentEvent)
     {
