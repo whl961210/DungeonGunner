@@ -211,4 +211,13 @@ public class RoomNodeGraphEditor : EditorWindow
             }
         }
     }
+
+    private void DrawConnectionLine(RoomNodeSO roomNodeA, RoomNodeSO roomNodeB)
+    {
+       Vector2 startPosition = roomNodeA.rect.center;
+       Vector2 endPosition = roomNodeB.rect.center;
+       Handles.DrawBezier(startPosition, endPosition, startPosition, endPosition, Color.white, null, connectingLineWidth);
+
+       GUI.changed = true;
+    }
 }
