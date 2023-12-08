@@ -31,9 +31,19 @@ public class RoomNodeSO : ScriptableObject
     {
         GUILayout.BeginArea(rect, nodeStyle);
         EditorGUI.BeginChangeCheck();
-        int selected = roomNodeTypeList.list.FindIndex(x => x == roomNodeType);
-        int selection = EditorGUILayout.Popup("", selected, GetRoomNodeTypesToDisplay());
-        roomNodeType = roomNodeTypeList.list[selection];
+        //if the room node has a parent or is of type entrance then display a label else display a popup
+        if(parentRoomNodeIDList.Count > 0 || roomNodeType.isEntrance)
+        {
+            //display a label that cannot be changed
+            EditorGUILayout.LabelField(roomNodeType.roomNodeTypeName);
+        }
+        else
+        {
+            //display a popup using the RoomNodeType name values that can be selected from
+            int selected = roomNodeTypeList.list.FindIndex(x => x == roomNodeType);
+            int selection = EditorGUILayout.Popup("", selected, GetRoomNodeTypesToDisplay());
+            roomNodeType = roomNodeTypeList.list[selection];
+        }
         if (EditorGUI.EndChangeCheck())
         {
             EditorUtility.SetDirty(this);
