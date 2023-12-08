@@ -23,6 +23,10 @@ public class RoomNodeGraphEditor : EditorWindow
     }
     private void OnEnable()
     {
+        //Subscribe to the inspector selection changed event
+        Selection.selectionChanged += InspectorSelectionChanged;
+
+        //define the style for the room node
         roomNodeStyle = new GUIStyle();
         roomNodeStyle.normal.background = EditorGUIUtility.Load("node1") as Texture2D;
         roomNodeStyle.normal.textColor = Color.white;
@@ -37,6 +41,11 @@ public class RoomNodeGraphEditor : EditorWindow
         roomNodeSelectedStyle.padding = new RectOffset(nodePadding, nodePadding, nodePadding, nodePadding);
         roomNodeSelectedStyle.border = new RectOffset(nodeBorder, nodeBorder, nodeBorder, nodeBorder);
 
+    }
+    private void OnDisable()
+    {
+        //Unsubscribe from the inspector selection changed event
+        Selection.selectionChanged -= InspectorSelectionChanged;
     }
     [OnOpenAsset(0)]
     public static bool OnDoubleClickAsset(int instanceID, int line)
@@ -263,5 +272,14 @@ public class RoomNodeGraphEditor : EditorWindow
                
 
         GUI.changed = true;
+    }
+    private void InspectorSelectionChanged()
+    {
+        RoomNodeGraphSO roomNodeGraph = Selection.activeObject as RoomNodeGraphSO;
+        if (roomNodeGraph != null)
+        {
+            currentRoomNodeGraph = roomNodeGraph;
+            GUI.changed = true;
+        }
     }
 }
