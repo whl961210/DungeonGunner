@@ -28,7 +28,7 @@ public class RoomNodeTypeSO : ScriptableObject
     #region Header
     [Header("One type Shuold be A Basic Room")]
     #endregion
-    public bool isBoosRoom;
+    public bool isBossRoom;
     #region Header
     [Header("One type Shuold be None (Unassigned)")]
     #endregion

@@ -6,9 +6,9 @@ using System;
 
 public class RoomNodeSO : ScriptableObject
 {
-    public string id;
-    public List<string> parentRoomNodeIDList = new List<string>();
-    public List<string> childRoomNodeIDList = new List<string>();
+    [HideInInspector] public string id;
+    [HideInInspector] public List<string> parentRoomNodeIDList = new List<string>();
+    [HideInInspector] public List<string> childRoomNodeIDList = new List<string>();
     [HideInInspector] public RoomNodeGraphSO roomNodeGraph;
     public RoomNodeTypeSO roomNodeType;
     [HideInInspector] public RoomNodeTypeListSO roomNodeTypeList;
@@ -214,7 +214,7 @@ public class RoomNodeSO : ScriptableObject
             return false;
         }
         // if adding a corridor check that this node has less than the max number of corridors
-        if(roomNodeGraph.GetRoomNode(childRoomNodeID.isCorridor && childRoomNodeIDList.Count >= Settings.maxChildCorridors))
+        if(roomNodeGraph.GetRoomNode(childRoomNodeID).roomNodeType.isCorridor && childRoomNodeIDList.Count >= Settings.maxChildCorridors)
         {
             return false;
         }
@@ -224,10 +224,11 @@ public class RoomNodeSO : ScriptableObject
             return false;
         }
         // if adding a room to a corridor check that the corridor is not already connected to a room
-        if(roomNodeGraph.GetRoomNode(childRoomNodeID).roomNodeType.isCorridor && childRoomNodeIDList.Count > 0)
+        if(!roomNodeGraph.GetRoomNode(childRoomNodeID).roomNodeType.isCorridor && childRoomNodeIDList.Count > 0)
         {
             return false;
         }
+        return true;
 
     }
     public bool AddParentRoomNodeIDtToRoomNode(string parentRoomNodeID)
