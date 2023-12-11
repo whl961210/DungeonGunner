@@ -189,7 +189,7 @@ public class RoomNodeGraphEditor : EditorWindow
     {
         GenericMenu contextMenu = new GenericMenu();
         contextMenu.AddItem(new GUIContent("Add Room Node"), false, CreateRoomNode, mousePosition);
-        contextMenu.AddSeperator("");
+        contextMenu.AddSeparator("");
         contextMenu.AddItem(new GUIContent("Select All Room Nodes"), false, SelectAllRoomNodes);
 
         contextMenu.ShowAsContext();
