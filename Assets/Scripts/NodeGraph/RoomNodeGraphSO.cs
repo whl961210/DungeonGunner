@@ -20,6 +20,17 @@ public class RoomNodeGraphSO : ScriptableObject
             roomNodeDictionary[roomNode.id] = roomNode;
         }
     }
+    public RoomNodeGraphSO GetRoomNode(string roomNodeID)
+    {
+        if (roomNodeDictionary.TryGetValue(roomNodeID, out RoomNodeSO roomNode))
+        {
+            return roomNode;
+        }
+        else
+        {
+            return null;
+        }
+    }
     #region Editor code
 #if UNITY_EDITOR
     [HideInInspector] public RoomNodeSO roomNodeToDrawFrom = null;
