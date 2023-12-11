@@ -189,6 +189,9 @@ public class RoomNodeGraphEditor : EditorWindow
     {
         GenericMenu contextMenu = new GenericMenu();
         contextMenu.AddItem(new GUIContent("Add Room Node"), false, CreateRoomNode, mousePosition);
+        contextMenu.AddSeperator("");
+        contextMenu.AddItem(new GUIContent("Select All Room Nodes"), false, SelectAllRoomNodes);
+
         contextMenu.ShowAsContext();
     }
     private void CreateRoomNode(object mousePositionObject)
@@ -219,6 +222,14 @@ public class RoomNodeGraphEditor : EditorWindow
                 GUI.changed = true;
             }
         }
+    }
+    private void SelectAllRoomNodes()
+    {
+        foreach (RoomNodeSO roomNode in currentRoomNodeGraph.roomNodeList)
+        {
+            roomNode.isSelected = true;
+        }
+        GUI.changed = true;
     }
     private void DrawRoomNodes()
     {
