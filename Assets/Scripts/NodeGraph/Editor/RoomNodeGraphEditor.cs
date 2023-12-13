@@ -10,7 +10,7 @@ public class RoomNodeGraphEditor : EditorWindow
     private GUIStyle roomNodeSelectedStyle;
     private static RoomNodeGraphSO currentRoomNodeGraph;
     private Vector2 graphOffset;
-    private Vector2 drag;
+    private Vector2 graphDrag;
     private RoomNodeSO currentRoomNode = null;
     private RoomNodeTypeListSO roomNodeTypeList;
     private const float nodeWidth = 160f;
@@ -87,7 +87,7 @@ public class RoomNodeGraphEditor : EditorWindow
         int verticalLineCount = Mathf.CeilToInt((position.width + gridSize) / gridSize);
         int horizontalLineCount = Mathf.CeilToInt((position.height + gridSize) / gridSize);
         Handles.color = new Color(gridColor.r, gridColor.g, gridColor.b, gridOpacity);
-        graphOffset += drag * 0.5f;
+        graphOffset += graphDrag * 0.5f;
         Vector3 gridOffset = new Vector3(graphOffset.x % gridSize, graphOffset.y % gridSize, 0);
         for (int i = 0; i < verticalLineCount; i++)
         {
@@ -97,7 +97,7 @@ public class RoomNodeGraphEditor : EditorWindow
         {
             Handles.DrawLine(new Vector3(-gridSize, gridSize * i, 0) + gridOffset, new Vector3(position.width + gridSize, gridSize * i, 0f) + gridOffset);
         }
-        Handlse.color = Color.white;
+        Handles.color = Color.white;
     }
     private void DrawDraggedLine()
     {
