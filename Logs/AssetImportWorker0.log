@@ -15,11 +15,11 @@ C:/Users/whl96/DungeonGunner
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-1700
+2375
 Successfully changed project path to: C:/Users/whl96/DungeonGunner
 C:/Users/whl96/DungeonGunner
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 77.21 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 71.59 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.7f1 (d91830b65d9b)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/Resources/UnitySubsystems
@@ -36,114 +36,120 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56696
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56148
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001151 seconds.
+Registered in 0.001172 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 66.62 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 64.99 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.861 seconds
+- Completed reload, in  1.558 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.001184 seconds.
+Registered in 0.001104 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 69.07 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 64.60 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.811 seconds
+- Completed reload, in  0.773 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 0.79 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 0.68 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2225 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 117.1 MB.
-System memory in use after: 117.2 MB.
+Unloading 2226 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 117.3 MB.
+System memory in use after: 117.4 MB.
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2683.
-Total: 1.732700 ms (FindLiveObjects: 0.181200 ms CreateObjectMapping: 0.080900 ms MarkObjects: 1.421700 ms  DeleteObjects: 0.047900 ms)
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2684.
+Total: 1.809400 ms (FindLiveObjects: 0.153900 ms CreateObjectMapping: 0.074200 ms MarkObjects: 1.529200 ms  DeleteObjects: 0.051500 ms)
 
 ========================================================================
 Received Import Request.
-  path: ProjectSettings/TagManager.asset
-  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fb8e8bd4de2030daf2bce39b350b1be') in 0.039502 seconds 
+  path: Assets/Prefabs/Dungeon/Room/MyRooms
+  artifactKey: Guid(5db61f8a7baf7c744a617189dd270d70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Dungeon/Room/MyRooms using Guid(5db61f8a7baf7c744a617189dd270d70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ba1821a50ec5ac0dee1f01a7ac523fb') in 0.008116 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 254.060075 seconds.
-  path: Assets/CourseAssets
-  artifactKey: Guid(26124588896f3804da1e87dd6d404eac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CourseAssets using Guid(26124588896f3804da1e87dd6d404eac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '834ae94d3f05e4b53b8ca55b51dbe810') in 0.006494 seconds 
+  Time since last request: 1.646835 seconds.
+  path: Assets/Prefabs/Dungeon/Room/RoomTemplate 1.prefab
+  artifactKey: Guid(09e35e32925df414385e7dc9d51a511b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Dungeon/Room/RoomTemplate 1.prefab using Guid(09e35e32925df414385e7dc9d51a511b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e5ba0d73eff45bb999c10385b533df3') in 0.052471 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.180662 seconds.
-  path: Assets/Rendering/UniversalRenderPipelineAsset.asset
-  artifactKey: Guid(4c15d3b72ef3dad4c820ad4cbf751bc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Rendering/UniversalRenderPipelineAsset.asset using Guid(4c15d3b72ef3dad4c820ad4cbf751bc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '236beb526f3d7c011ba5b2500028b44b') in 0.010244 seconds 
+  Time since last request: 5.784095 seconds.
+  path: Assets/Prefabs/Dungeon/Room/MyRooms/RoomTemplate 1.prefab
+  artifactKey: Guid(09e35e32925df414385e7dc9d51a511b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Dungeon/Room/MyRooms/RoomTemplate 1.prefab using Guid(09e35e32925df414385e7dc9d51a511b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e0447dca884b158840cbad0cacb2d5e') in 0.002646 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1295.050870 seconds.
-  path: Assets/CourseAssets/Materials/Enemy/Shader Graphs_EnemyMaterialise_Green.mat
-  artifactKey: Guid(2203edc4d7bb7d54d902153ccd995f5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CourseAssets/Materials/Enemy/Shader Graphs_EnemyMaterialise_Green.mat using Guid(2203edc4d7bb7d54d902153ccd995f5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '29242046c96d84337b958c154bf3620d') in 0.592627 seconds 
+  Time since last request: 14.169086 seconds.
+  path: Assets/Prefabs/Dungeon/Room/MyRooms/MediumRoom_MyRooms_1.prefab
+  artifactKey: Guid(09e35e32925df414385e7dc9d51a511b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Dungeon/Room/MyRooms/MediumRoom_MyRooms_1.prefab using Guid(09e35e32925df414385e7dc9d51a511b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83525094692b4545ed57c803033080c8') in 0.007649 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001374 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.76 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.700 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.74 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2099 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 109.3 MB.
+System memory in use after: 109.4 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 2687.
+Total: 1.896900 ms (FindLiveObjects: 0.164100 ms CreateObjectMapping: 0.084800 ms MarkObjects: 1.631900 ms  DeleteObjects: 0.014900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001431 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.698 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.78 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2099 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 109.3 MB.
+System memory in use after: 109.5 MB.
+
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 2690.
+Total: 1.847400 ms (FindLiveObjects: 0.164400 ms CreateObjectMapping: 0.073100 ms MarkObjects: 1.594000 ms  DeleteObjects: 0.014700 ms)
+
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000140 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/TerrainLit.mat
-  artifactKey: Guid(594ea882c5a793440b60ff72d896021e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/TerrainLit.mat using Guid(594ea882c5a793440b60ff72d896021e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f00af9d8ce7f4cc55db6aaa15a6662ae') in 0.022537 seconds 
+  Time since last request: 7982.105731 seconds.
+  path: Assets/Prefabs/Dungeon/Room/MyRooms/MediumRoom_MyRooms_1.prefab
+  artifactKey: Guid(09e35e32925df414385e7dc9d51a511b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Dungeon/Room/MyRooms/MediumRoom_MyRooms_1.prefab using Guid(09e35e32925df414385e7dc9d51a511b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd303ec40d38b63416b11ebe4515770a4') in 0.040113 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000139 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Unlit-Default.mat
-  artifactKey: Guid(9dfc825aed78fcd4ba02077103263b40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Unlit-Default.mat using Guid(9dfc825aed78fcd4ba02077103263b40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ceea110e9f43f1b08980dba5c86d052') in 0.019899 seconds 
+  Time since last request: 1228.867087 seconds.
+  path: Assets/CourseAssets/Tilemap/Tiles/Shading
+  artifactKey: Guid(f0d1693aa7fa2224cb4284e30badfd41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CourseAssets/Tilemap/Tiles/Shading using Guid(f0d1693aa7fa2224cb4284e30badfd41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b621640346dcf4b2ac7fce2a174377ca') in 0.006252 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000126 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/SimpleLit.mat
-  artifactKey: Guid(6a1143ee683302f4aa628c052723efc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/SimpleLit.mat using Guid(6a1143ee683302f4aa628c052723efc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d34822255dd0e2173bf5a84718b54fd') in 0.060119 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000196 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat
-  artifactKey: Guid(a97c105638bdf8b4a8650670310a4cd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat using Guid(a97c105638bdf8b4a8650670310a4cd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6074e4c5ad76e516a4b451c069c52943') in 0.012467 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 100.438963 seconds.
-  path: Assets/CourseAssets/Tilemap/Tiles/Collision/Collision Tile.asset
-  artifactKey: Guid(37e2c9e0227bfbc409cd632b9bd0c81f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CourseAssets/Tilemap/Tiles/Collision/Collision Tile.asset using Guid(37e2c9e0227bfbc409cd632b9bd0c81f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a600d6cbffa7a775b4a7b3ce62fee61') in 0.017033 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 11.564840 seconds.
-  path: Assets/CourseAssets/Textures/Sprites/Collision/Collision Tile.png
-  artifactKey: Guid(abc037715b8d96d4fa8b493c9986cf2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CourseAssets/Textures/Sprites/Collision/Collision Tile.png using Guid(abc037715b8d96d4fa8b493c9986cf2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c05f23d44273de4edaa9592778928ba6') in 0.020509 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 147.685943 seconds.
-  path: Assets/Prefabs/Dungeon
-  artifactKey: Guid(54f03a11ad5f7a64b9e3e7cfad20a9fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Dungeon using Guid(54f03a11ad5f7a64b9e3e7cfad20a9fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e824e88b56a7b796cd78a0c4f9321b1') in 0.005910 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.103375 seconds.
-  path: Assets/Prefabs/Dungeon/Room
-  artifactKey: Guid(c10ca506d85d25a4e9b6eb01ff6f0287) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Dungeon/Room using Guid(c10ca506d85d25a4e9b6eb01ff6f0287) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '478171e714a7c0ca889a4728290fb22a') in 0.005411 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.308005 seconds.
-  path: Assets/Prefabs/Dungeon/Room/RoomTemplate.prefab
-  artifactKey: Guid(7a2fc834d05af854cb2f79ae59b2d371) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Prefabs/Dungeon/Room/RoomTemplate.prefab using Guid(7a2fc834d05af854cb2f79ae59b2d371) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39f330f8e1228ecc885c1eb0c3c797a0') in 0.015558 seconds 
+  Time since last request: 2.715104 seconds.
+  path: Assets/Prefabs/Dungeon/Room/MyRooms/MediumRoom_MyRooms_1.prefab
+  artifactKey: Guid(09e35e32925df414385e7dc9d51a511b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Dungeon/Room/MyRooms/MediumRoom_MyRooms_1.prefab using Guid(09e35e32925df414385e7dc9d51a511b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '596e66a1efd2dc1850dc4447345a999b') in 0.010011 seconds 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file

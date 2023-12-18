@@ -15,11 +15,11 @@ C:/Users/whl96/DungeonGunner
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-13718
+2822
 Successfully changed project path to: C:/Users/whl96/DungeonGunner
 C:/Users/whl96/DungeonGunner
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 68.84 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 69.46 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.7f1 (d91830b65d9b)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/Resources/UnitySubsystems
@@ -36,147 +36,60 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56888
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56544
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.1.7f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001240 seconds.
+Registered in 0.001093 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 63.29 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 79.55 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.613 seconds
+- Completed reload, in  1.645 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.001314 seconds.
+Registered in 0.001599 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 67.64 ms, found 0 plugins.
+Refreshing native plugins compatible for Editor in 64.63 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.820 seconds
+- Completed reload, in  0.808 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.81 ms, found 0 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.75 ms, found 0 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2212 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 114.8 MB.
-System memory in use after: 114.9 MB.
+Unloading 2226 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 117.3 MB.
+System memory in use after: 117.4 MB.
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2670.
-Total: 1.760700 ms (FindLiveObjects: 0.156000 ms CreateObjectMapping: 0.077100 ms MarkObjects: 1.476600 ms  DeleteObjects: 0.050000 ms)
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2684.
+Total: 1.761700 ms (FindLiveObjects: 0.189100 ms CreateObjectMapping: 0.099400 ms MarkObjects: 1.419800 ms  DeleteObjects: 0.052500 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/CourseAssets/Textures/Sprites/Player/TheGeneral/TheGeneralIdleDown.png
-  artifactKey: Guid(788b52df224c1d14594c1176892c7ab3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CourseAssets/Textures/Sprites/Player/TheGeneral/TheGeneralIdleDown.png using Guid(788b52df224c1d14594c1176892c7ab3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfb966977054755e698ecc986ae5657c') in 0.131536 seconds 
+  path: Assets/CourseAssets/Textures/Tilemap/Dungeon2/Dungeon2.png
+  artifactKey: Guid(f335771611585d74499e636cecc39831) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CourseAssets/Textures/Tilemap/Dungeon2/Dungeon2.png using Guid(f335771611585d74499e636cecc39831) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b0440292bee5f2aae201b1d3842d9d92') in 0.395035 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 45.719017 seconds.
-  path: Assets/CourseAssets/Textures/Sprites/Player/TheGeneral
-  artifactKey: Guid(cb944429c77baae48928561e9f5a51b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CourseAssets/Textures/Sprites/Player/TheGeneral using Guid(cb944429c77baae48928561e9f5a51b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '83748838820228c8720a6bc422a19b89') in 0.008189 seconds 
+  Time since last request: 33.290448 seconds.
+  path: Assets/CourseAssets/Textures/Tilemap/Dungeon2/Dungeon2.png
+  artifactKey: Guid(f335771611585d74499e636cecc39831) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CourseAssets/Textures/Tilemap/Dungeon2/Dungeon2.png using Guid(f335771611585d74499e636cecc39831) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4360f3a34d2aba0d944128573f1bb868') in 0.334772 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.041168 seconds.
-  path: Assets/CourseAssets/Textures/Sprites/Player/TheGeneral/TheGeneralHand.png
-  artifactKey: Guid(a8c352369ed75924d84743672d1ab512) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CourseAssets/Textures/Sprites/Player/TheGeneral/TheGeneralHand.png using Guid(a8c352369ed75924d84743672d1ab512) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2247b069a394b39ba0d71617dc350d9c') in 0.011369 seconds 
+  Time since last request: 45.521461 seconds.
+  path: Assets/CourseAssets/Textures/Tilemap/Dungeon3/Dungeon3.png
+  artifactKey: Guid(c5a53599c9e8b2247b1bd54f012190ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CourseAssets/Textures/Tilemap/Dungeon3/Dungeon3.png using Guid(c5a53599c9e8b2247b1bd54f012190ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0820720d8ce3a18ddaa5e530d27e0a01') in 0.294022 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.645674 seconds.
-  path: Assets/CourseAssets/Textures/Sprites/Player/TheGeneral/TheGeneralMiniMapIcon.png
-  artifactKey: Guid(709f49100a0267f419aa33d571fb9d25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CourseAssets/Textures/Sprites/Player/TheGeneral/TheGeneralMiniMapIcon.png using Guid(709f49100a0267f419aa33d571fb9d25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2e65ffc58782a7fb13f0674b8ee77e0') in 0.012232 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.894215 seconds.
-  path: Assets/CourseAssets/Textures/Sprites/Player/TheGeneral/TheGeneralMoveUpRight.png
-  artifactKey: Guid(5a9e24626cc0e7f48b94d4ab211a5836) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CourseAssets/Textures/Sprites/Player/TheGeneral/TheGeneralMoveUpRight.png using Guid(5a9e24626cc0e7f48b94d4ab211a5836) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c91a8f5bbea5e83a25b96bf6d614bf5d') in 0.034461 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.388923 seconds.
-  path: Assets/CourseAssets/Textures/Sprites/Player/TheGeneral/TheGeneralIdleUp.png
-  artifactKey: Guid(9a93187f08419c741b2e66627c6149ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CourseAssets/Textures/Sprites/Player/TheGeneral/TheGeneralIdleUp.png using Guid(9a93187f08419c741b2e66627c6149ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bda9a5a3ae4d691f58724d216e844d54') in 0.014784 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.929031 seconds.
-  path: Assets/CourseAssets/Textures/Sprites/Player/TheGeneral/TheGeneralIdleUpRight.png
-  artifactKey: Guid(00301a9551d2ee947bec77df614931fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CourseAssets/Textures/Sprites/Player/TheGeneral/TheGeneralIdleUpRight.png using Guid(00301a9551d2ee947bec77df614931fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23f22f8ca1c9e78e11df328653106a22') in 0.013580 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.485479 seconds.
-  path: Assets/CourseAssets/Textures/Sprites/Player/TheGeneral/TheGeneralIdleRight.png
-  artifactKey: Guid(ce3f10a3a9ad3c34baad25a046b6ebeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CourseAssets/Textures/Sprites/Player/TheGeneral/TheGeneralIdleRight.png using Guid(ce3f10a3a9ad3c34baad25a046b6ebeb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2095b74de448cf91e7da2b25110ffdf5') in 0.013345 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.467362 seconds.
-  path: Assets/CourseAssets/Textures/Sprites/Player/TheGeneral/TheGeneralMoveDown.png
-  artifactKey: Guid(4904954b0c06b7b45b073e5dd52b13fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CourseAssets/Textures/Sprites/Player/TheGeneral/TheGeneralMoveDown.png using Guid(4904954b0c06b7b45b073e5dd52b13fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0330f166c4bec7fb9a51c1a13391dda9') in 0.036654 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1.453218 seconds.
-  path: Assets/CourseAssets/Textures/Sprites/Player/TheGeneral/TheGeneralRollRight.png
-  artifactKey: Guid(8cdf903a44976304a880b3e290c4567c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CourseAssets/Textures/Sprites/Player/TheGeneral/TheGeneralRollRight.png using Guid(8cdf903a44976304a880b3e290c4567c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf09626bf333c2f1de0b4af87048efa0') in 0.015667 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.413317 seconds.
-  path: Assets/CourseAssets/Textures/Sprites/Player/TheGeneral/TheGeneralRollDown.png
-  artifactKey: Guid(9f85801b0af27ef4f8d15a54f15b2c8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CourseAssets/Textures/Sprites/Player/TheGeneral/TheGeneralRollDown.png using Guid(9f85801b0af27ef4f8d15a54f15b2c8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53ea39f5a2b75838a56289ec2a21f7a6') in 0.015672 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 126.991887 seconds.
-  path: Assets/Scenes/SampleScene.unity
-  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/SampleScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50d6a691a7f51dc933f33785eb6b7526') in 0.006444 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.836845 seconds.
-  path: Assets/Scenes/MainGameScene.unity
-  artifactKey: Guid(e3920d9ec9e712d4abdab52f371eb725) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/MainGameScene.unity using Guid(e3920d9ec9e712d4abdab52f371eb725) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c31a766c864f430743f94a3daf5a4e6f') in 0.007453 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 1084.956111 seconds.
-  path: Assets/Scenes/MainGameScene/PostProcessing Profile.asset
-  artifactKey: Guid(d3fb8ea4c79782941865f78bdad9d98e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/MainGameScene/PostProcessing Profile.asset using Guid(d3fb8ea4c79782941865f78bdad9d98e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b898a90bc9e8cd56ea8ea4401944c1fa') in 0.010129 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 11.768302 seconds.
-  path: Assets/Scenes/MainGameScene/PostProcessing Profile.asset
-  artifactKey: Guid(d3fb8ea4c79782941865f78bdad9d98e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/MainGameScene/PostProcessing Profile.asset using Guid(d3fb8ea4c79782941865f78bdad9d98e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db0423058f97c6073494208a1c142fb4') in 0.007403 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.001232 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.82 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.710 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 0.71 ms, found 0 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2109 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 115.8 MB.
-System memory in use after: 116.0 MB.
-
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 2835.
-Total: 1.703500 ms (FindLiveObjects: 0.175800 ms CreateObjectMapping: 0.080500 ms MarkObjects: 1.434100 ms  DeleteObjects: 0.012400 ms)
-
+  Time since last request: 5.628067 seconds.
+  path: Assets/CourseAssets/Textures/Tilemap/Dungeon1/Dungeon Decor 1.png
+  artifactKey: Guid(74a39bc1eadb02c479ca1b6f95457cbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CourseAssets/Textures/Tilemap/Dungeon1/Dungeon Decor 1.png using Guid(74a39bc1eadb02c479ca1b6f95457cbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd66487ac1bf17cda8ace62e40ee2ed7c') in 0.053467 seconds 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
