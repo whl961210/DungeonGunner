@@ -2,7 +2,7 @@ using UnityEngine;
 [System.Serializable]
 public class Doorway
 {
-    public Vectpr2Int position;
+    public Vector2Int position;
     public Orientation orientation;
     public GameObject doorPrefab;
     #region Header
