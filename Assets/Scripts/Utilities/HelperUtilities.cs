@@ -20,6 +20,12 @@ public static class HelperUtilities
     {
         bool error = false;
         int count = 0;
+
+        if (enumerableToCheck == null)
+        {
+            Debug.LogError(fileName + " is empty and must contain a value in the object " + thisObject.name.ToString() + ".");
+            return true;
+        }
         foreach (var item in enumerableToCheck)
         {
             if (item == null)
