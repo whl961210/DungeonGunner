@@ -96,6 +96,48 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
         }
     }
     /// <summary>
+    /// Attempt to randomly build the dungeon for the specified room nodeGraph. Returns true if a
+    /// successful random layout was generated, else returns false if a problem was encoutered and
+    /// another attempt is required.
+    /// </summary>
+    private bool AttemptToBuildRandomDungeon(RoomNodeGraphSO roomNodeGraph)
+    {
+
+        // Create Open Room Node Queue
+        Queue<RoomNodeSO> openRoomNodeQueue = new Queue<RoomNodeSO>();
+
+        // Add Entrance Node To Room Node Queue From Room Node Graph
+        RoomNodeSO entranceNode = roomNodeGraph.GetRoomNode(roomNodeTypeList.list.Find(x => x.isEntrance));
+
+        if (entranceNode != null)
+        {
+            openRoomNodeQueue.Enqueue(entranceNode);
+        }
+        else
+        {
+            Debug.Log("No Entrance Node");
+            return false;  // Dungeon Not Built
+        }
+
+        // Start with no room overlaps
+        bool noRoomOverlaps = true;
+
+
+        // Process open room nodes queue
+        noRoomOverlaps = ProcessRoomsInOpenRoomNodeQueue(roomNodeGraph, openRoomNodeQueue, noRoomOverlaps);
+
+        // If all the room nodes have been processed and there hasn't been a room overlap then return true
+        if (openRoomNodeQueue.Count == 0 && noRoomOverlaps)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+    /// <summary>
     /// Select a random room node graph from the list of room node graphs
     /// </summary>
     private RoomNodeGraphSO SelectRandomRoomNodeGraph(List<RoomNodeGraphSO> roomNodeGraphList)
