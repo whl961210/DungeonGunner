@@ -171,6 +171,32 @@ public class InstantiatedRoom : MonoBehaviour
         }
     }
     /// <summary>
+    /// Block doorway vertically - for East and West doorways
+    /// </summary>
+    private void BlockDoorwayVertically(Tilemap tilemap, Doorway doorway)
+    {
+        Vector2Int startPosition = doorway.doorwayStartCopyPosition;
+
+        // loop through all tiles to copy
+        for (int yPos = 0; yPos < doorway.doorwayCopyTileHeight; yPos++)
+        {
+
+            for (int xPos = 0; xPos < doorway.doorwayCopyTileWidth; xPos++)
+            {
+                // Get rotation of tile being copied
+                Matrix4x4 transformMatrix = tilemap.GetTransformMatrix(new Vector3Int(startPosition.x + xPos, startPosition.y - yPos, 0));
+
+                // Copy tile
+                tilemap.SetTile(new Vector3Int(startPosition.x + xPos, startPosition.y - 1 - yPos, 0), tilemap.GetTile(new Vector3Int(startPosition.x + xPos, startPosition.y - yPos, 0)));
+
+                // Set rotation of tile copied
+                tilemap.SetTransformMatrix(new Vector3Int(startPosition.x + xPos, startPosition.y - 1 - yPos, 0), transformMatrix);
+
+            }
+
+        }
+    }
+    /// <summary>
     /// Disable collision tilemap renderer
     /// </summary>
     private void DisableCollisionTilemapRenderer()
