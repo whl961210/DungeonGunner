@@ -24,4 +24,12 @@ public class GameResources : MonoBehaviour
     [Tooltip("This is the RoomNodeTypeListSO that will be used to generate the dungeon.")]
     #endregion
     public RoomNodeTypeListSO roomNodeTypeList;
+    #region Header MATERIALS
+    [Space(10)]
+    [Header("MATERIALS")]
+    #endregion
+    #region Tooltip
+    [Tooltip("Dimmed Material")]
+    #endregion
+    public Material dimmedMaterial;
 }
