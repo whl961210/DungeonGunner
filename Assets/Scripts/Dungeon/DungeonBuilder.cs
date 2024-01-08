@@ -95,4 +95,19 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
             }
         }
     }
+    /// <summary>
+    /// Select a random room node graph from the list of room node graphs
+    /// </summary>
+    private RoomNodeGraphSO SelectRandomRoomNodeGraph(List<RoomNodeGraphSO> roomNodeGraphList)
+    {
+        if (roomNodeGraphList.Count > 0)
+        {
+            return roomNodeGraphList[UnityEngine.Random.Range(0, roomNodeGraphList.Count)];
+        }
+        else
+        {
+            Debug.Log("No room node graphs in list");
+            return null;
+        }
+    }
 }
