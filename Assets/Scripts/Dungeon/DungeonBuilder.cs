@@ -275,6 +275,47 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
 
     }
     /// <summary>
+    /// Get random room template for room node taking into account the parent doorway orientation.
+    /// </summary>
+    private RoomTemplateSO GetRandomTemplateForRoomConsistentWithParent(RoomNodeSO roomNode, Doorway doorwayParent)
+    {
+        RoomTemplateSO roomtemplate = null;
+
+        // If room node is a corridor then select random correct Corridor room template based on
+        // parent doorway orientation
+        if (roomNode.roomNodeType.isCorridor)
+        {
+            switch (doorwayParent.orientation)
+            {
+                case Orientation.north:
+                case Orientation.south:
+                    roomtemplate = GetRandomRoomTemplate(roomNodeTypeList.list.Find(x => x.isCorridorNS));
+                    break;
+
+
+                case Orientation.east:
+                case Orientation.west:
+                    roomtemplate = GetRandomRoomTemplate(roomNodeTypeList.list.Find(x => x.isCorridorEW));
+                    break;
+
+
+                case Orientation.none:
+                    break;
+
+                default:
+                    break;
+            }
+        }
+        // Else select random room template
+        else
+        {
+            roomtemplate = GetRandomRoomTemplate(roomNode.roomNodeType);
+        }
+
+
+        return roomtemplate;
+    }
+    /// <summary>
     /// Create room based on roomTemplate and layoutNode, and return the created room
     /// </summary>
     private Room CreateRoomFromRoomTemplate(RoomTemplateSO roomTemplate, RoomNodeSO roomNode)
