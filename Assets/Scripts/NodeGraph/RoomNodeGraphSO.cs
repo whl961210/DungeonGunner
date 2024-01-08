@@ -20,6 +20,17 @@ public class RoomNodeGraphSO : ScriptableObject
             roomNodeDictionary[roomNode.id] = roomNode;
         }
     }
+    public RoomNodeSO GetRoomNode(RoomNodeTypeSO roomNodeType)
+    {
+        foreach (RoomNodeSO node in roomNodeList)
+        {
+            if (node.roomNodeType == roomNodeType)
+            {
+                return node;
+            }
+        }
+        return null;
+    }
     public RoomNodeSO GetRoomNode(string roomNodeID)
     {
         if (roomNodeDictionary.TryGetValue(roomNodeID, out RoomNodeSO roomNode))
