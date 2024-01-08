@@ -210,6 +210,18 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
 
     }
     /// <summary>
+    /// Get unconnected doorways
+    /// </summary>
+    private IEnumerable<Doorway> GetUnconnectedAvailableDoorways(List<Doorway> roomDoorwayList)
+    {
+        // Loop through doorway list
+        foreach (Doorway doorway in roomDoorwayList)
+        {
+            if (!doorway.isConnected && !doorway.isUnavailable)
+                yield return doorway;
+        }
+    }
+    /// <summary>
     /// Attempt to place the room node in the dungeon - if room can be placed return the room, else return null
     /// </summary>
     private bool CanPlaceRoomWithNoOverlaps(RoomNodeSO roomNode, Room parentRoom)
