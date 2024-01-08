@@ -421,7 +421,7 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
         return null;
 
     }
-    
+
     /// <summary>
     /// Check for rooms that overlap the upper and lower bounds parameters, and if there are overlapping rooms then return room else return null
     /// </summary>
@@ -446,6 +446,25 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
 
         // Return
         return null;
+
+    }
+    /// <summary>
+    /// Check if 2 rooms overlap each other - return true if they overlap or false if they don't overlap
+    /// </summary>
+    private bool IsOverLappingRoom(Room room1, Room room2)
+    {
+        bool isOverlappingX = IsOverLappingInterval(room1.lowerBounds.x, room1.upperBounds.x, room2.lowerBounds.x, room2.upperBounds.x);
+
+        bool isOverlappingY = IsOverLappingInterval(room1.lowerBounds.y, room1.upperBounds.y, room2.lowerBounds.y, room2.upperBounds.y);
+
+        if (isOverlappingX && isOverlappingY)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
 
     }
 
