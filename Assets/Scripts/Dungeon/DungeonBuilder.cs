@@ -210,6 +210,40 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
 
     }
     /// <summary>
+    /// Create room based on roomTemplate and layoutNode, and return the created room
+    /// </summary>
+    private Room CreateRoomFromRoomTemplate(RoomTemplateSO roomTemplate, RoomNodeSO roomNode)
+    {
+        // Initialise room from template
+        Room room = new Room();
+
+        room.templateID = roomTemplate.guid;
+        room.id = roomNode.id;
+        room.prefab = roomTemplate.prefab;
+        room.roomNodeType = roomTemplate.roomNodeType;
+        room.lowerBounds = roomTemplate.lowerBounds;
+        room.upperBounds = roomTemplate.upperBounds;
+        room.spawnPositionArray = roomTemplate.spawnPositionArray;
+        room.templateLowerBounds = roomTemplate.lowerBounds;
+        room.templateUpperBounds = roomTemplate.upperBounds;
+        room.childRoomIDList = CopyStringList(roomNode.childRoomNodeIDList);
+        room.doorWayList = CopyDoorwayList(roomTemplate.doorwayList);
+
+        // Set parent ID for room
+        if (roomNode.parentRoomNodeIDList.Count == 0) // Entrance
+        {
+            room.parentRoomID = "";
+            room.isPreviouslyVisited = true;
+        }
+        else
+        {
+            room.parentRoomID = roomNode.parentRoomNodeIDList[0];
+        }
+
+        return room;
+
+    }
+    /// <summary>
     /// Select a random room node graph from the list of room node graphs
     /// </summary>
     private RoomNodeGraphSO SelectRandomRoomNodeGraph(List<RoomNodeGraphSO> roomNodeGraphList)
