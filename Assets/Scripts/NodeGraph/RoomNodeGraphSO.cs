@@ -42,6 +42,15 @@ public class RoomNodeGraphSO : ScriptableObject
             return null;
         }
     }
+    /// Get child room nodes for supplied parent room node
+    /// </summary>
+    public IEnumerable<RoomNodeSO> GetChildRoomNodes(RoomNodeSO parentRoomNode)
+    {
+        foreach (string childNodeID in parentRoomNode.childRoomNodeIDList)
+        {
+            yield return GetRoomNode(childNodeID);
+        }
+    }
     #region Editor code
 #if UNITY_EDITOR
     [HideInInspector] public RoomNodeSO roomNodeToDrawFrom = null;
