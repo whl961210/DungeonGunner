@@ -467,6 +467,20 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
         }
 
     }
+    /// <summary>
+    /// Check if interval 1 overlaps interval 2 - this method is used by the IsOverlappingRoom method
+    /// </summary>
+    private bool IsOverLappingInterval(int imin1, int imax1, int imin2, int imax2)
+    {
+        if (Mathf.Max(imin1, imin2) <= Mathf.Min(imax1, imax2))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     /// <summary>
     /// Create room based on roomTemplate and layoutNode, and return the created room
