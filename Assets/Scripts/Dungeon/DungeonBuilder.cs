@@ -393,6 +393,35 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
 
     }
     /// <summary>
+    /// Get the doorway from the doorway list that has the opposite orientation to doorway
+    /// </summary>
+    private Doorway GetOppositeDoorway(Doorway parentDoorway, List<Doorway> doorwayList)
+    {
+
+        foreach (Doorway doorwayToCheck in doorwayList)
+        {
+            if (parentDoorway.orientation == Orientation.east && doorwayToCheck.orientation == Orientation.west)
+            {
+                return doorwayToCheck;
+            }
+            else if (parentDoorway.orientation == Orientation.west && doorwayToCheck.orientation == Orientation.east)
+            {
+                return doorwayToCheck;
+            }
+            else if (parentDoorway.orientation == Orientation.north && doorwayToCheck.orientation == Orientation.south)
+            {
+                return doorwayToCheck;
+            }
+            else if (parentDoorway.orientation == Orientation.south && doorwayToCheck.orientation == Orientation.north)
+            {
+                return doorwayToCheck;
+            }
+        }
+
+        return null;
+
+    }
+    /// <summary>
     /// Create room based on roomTemplate and layoutNode, and return the created room
     /// </summary>
     private Room CreateRoomFromRoomTemplate(RoomTemplateSO roomTemplate, RoomNodeSO roomNode)
