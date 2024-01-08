@@ -20,5 +20,58 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
         // Set dimmed material to fully visible
         GameResources.Instance.dimmedMaterial.SetFloat("Alpha_Slider", 1f);
     }
-    
+
+    /// <summary>
+    /// Load the room node type list
+    /// </summary>
+    private void LoadRoomNodeTypeList()
+    {
+        roomNodeTypeList = GameResources.Instance.roomNodeTypeList;
+    }
+
+    /// <summary>
+    /// Generate random dungeon, returns true if dungeon built, false if failed
+    /// </summary>
+    public bool GenerateDungeon(DungeonLevelSO currentDungeonLevel)
+    {
+        roomTemplateList = currentDungeonLevel.roomTemplateList;
+
+        // Load the scriptable object room templates into the dictionary
+        LoadRoomTemplatesIntoDictionary();
+
+        dungeonBuildSuccessful = false;
+        int dungeonBuildAttempts = 0;
+
+        while (!dungeonBuildSuccessful && dungeonBuildAttempts < Settings.maxDungeonBuildAttempts)
+        {
+            dungeonBuildAttempts++;
+
+            // Select a random room node graph from the list
+            RoomNodeGraphSO roomNodeGraph = SelectRandomRoomNodeGraph(currentDungeonLevel.roomNodeGraphList);
+
+            int dungeonRebuildAttemptsForNodeGraph = 0;
+            dungeonBuildSuccessful = false;
+
+            // Loop until dungeon successfully built or more than max attempts for node graph
+            while (!dungeonBuildSuccessful && dungeonRebuildAttemptsForNodeGraph <= Settings.maxDungeonRebuildAttemptsForRoomGraph)
+            {
+                // Clear dungeon room gameobjects and dungeon room dictionary
+                ClearDungeon();
+
+                dungeonRebuildAttemptsForNodeGraph++;
+
+                // Attempt To Build A Random Dungeon For The Selected room node graph
+                dungeonBuildSuccessful = AttemptToBuildRandomDungeon(roomNodeGraph);
+            }
+
+
+            if (dungeonBuildSuccessful)
+            {
+                // Instantiate Room Gameobjects
+                InstantiateRoomGameobjects();
+            }
+        }
+
+        return dungeonBuildSuccessful;
+    }
 }
