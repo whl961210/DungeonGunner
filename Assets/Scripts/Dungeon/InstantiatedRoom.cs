@@ -35,6 +35,8 @@ public class InstantiatedRoom : MonoBehaviour
     {
         PopulateTilemapMemberVariables(roomGameobject);
 
+        BlockOffUnusedDoorWays();
+
         DisableCollisionTilemapRenderer();
 
     }
@@ -122,6 +124,28 @@ public class InstantiatedRoom : MonoBehaviour
                 BlockADoorwayOnTilemapLayer(frontTilemap, doorway);
             }
         }
+    }
+    /// <summary>
+    /// Block a doorway on a tilemap layer
+    /// </summary>
+    private void BlockADoorwayOnTilemapLayer(Tilemap tilemap, Doorway doorway)
+    {
+        switch (doorway.orientation)
+        {
+            case Orientation.north:
+            case Orientation.south:
+                BlockDoorwayHorizontally(tilemap, doorway);
+                break;
+
+            case Orientation.east:
+            case Orientation.west:
+                BlockDoorwayVertically(tilemap, doorway);
+                break;
+
+            case Orientation.none:
+                break;
+        }
+
     }
     /// <summary>
     /// Disable collision tilemap renderer
