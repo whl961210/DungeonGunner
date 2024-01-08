@@ -10,4 +10,14 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
     private List<RoomTemplateSO> roomTemplateList = null;
     private RoomNodeTypeListSO roomNodeTypeList;
     private bool dungeonBuildSuccessful;
+    protected override void Awake()
+    {
+        base.Awake();
+
+        // Load the room node type list
+        LoadRoomNodeTypeList();
+
+        // Set dimmed material to fully visible
+        GameResources.Instance.dimmedMaterial.SetFloat("Alpha_Slider", 1f);
+    }
 }
