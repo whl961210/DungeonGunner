@@ -80,7 +80,49 @@ public class InstantiatedRoom : MonoBehaviour
         }
 
     }
+    /// <summary>
+    /// Block Off Unused Doorways In The Room
+    /// </summary>
+    private void BlockOffUnusedDoorWays()
+    {
+        // Loop through all doorways
+        foreach (Doorway doorway in room.doorWayList)
+        {
+            if (doorway.isConnected)
+                continue;
 
+            // Block unconnected doorways using tiles on tilemaps
+            if (collisionTilemap != null)
+            {
+                BlockADoorwayOnTilemapLayer(collisionTilemap, doorway);
+            }
+
+            if (minimapTilemap != null)
+            {
+                BlockADoorwayOnTilemapLayer(minimapTilemap, doorway);
+            }
+
+            if (groundTilemap != null)
+            {
+                BlockADoorwayOnTilemapLayer(groundTilemap, doorway);
+            }
+
+            if (decoration1Tilemap != null)
+            {
+                BlockADoorwayOnTilemapLayer(decoration1Tilemap, doorway);
+            }
+
+            if (decoration2Tilemap != null)
+            {
+                BlockADoorwayOnTilemapLayer(decoration2Tilemap, doorway);
+            }
+
+            if (frontTilemap != null)
+            {
+                BlockADoorwayOnTilemapLayer(frontTilemap, doorway);
+            }
+        }
+    }
     /// <summary>
     /// Disable collision tilemap renderer
     /// </summary>
