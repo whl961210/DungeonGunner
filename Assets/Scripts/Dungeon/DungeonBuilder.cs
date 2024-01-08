@@ -110,4 +110,25 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
             return null;
         }
     }
+    /// <summary>
+    /// Clear dungeon room gameobjects and dungeon room dictionary
+    /// </summary>
+    private void ClearDungeon()
+    {
+        // Destroy instantiated dungeon gameobjects and clear dungeon manager room dictionary
+        if (dungeonBuilderRoomDictionary.Count > 0)
+        {
+            foreach (KeyValuePair<string, Room> keyvaluepair in dungeonBuilderRoomDictionary)
+            {
+                Room room = keyvaluepair.Value;
+
+                if (room.instantiatedRoom != null)
+                {
+                    Destroy(room.instantiatedRoom.gameObject);
+                }
+            }
+
+            dungeonBuilderRoomDictionary.Clear();
+        }
+    }
 }
