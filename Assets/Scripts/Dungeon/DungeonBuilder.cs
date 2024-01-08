@@ -587,6 +587,20 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
         }
     }
     /// <summary>
+    /// Get room by roomID, if no room exists with that ID return null
+    /// </summary>
+    public Room GetRoomByRoomID(string roomID)
+    {
+        if (dungeonBuilderRoomDictionary.TryGetValue(roomID, out Room room))
+        {
+            return room;
+        }
+        else
+        {
+            return null;
+        }
+    }
+    /// <summary>
     /// Clear dungeon room gameobjects and dungeon room dictionary
     /// </summary>
     private void ClearDungeon()
