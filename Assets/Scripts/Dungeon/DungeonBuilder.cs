@@ -138,6 +138,52 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
 
     }
     /// <summary>
+    /// Process rooms in the open room node queue, returning true if there are no room overlaps
+    /// </summary>
+    private bool ProcessRoomsInOpenRoomNodeQueue(RoomNodeGraphSO roomNodeGraph, Queue<RoomNodeSO> openRoomNodeQueue, bool noRoomOverlaps)
+    {
+
+        // While room nodes in open room node queue & no room overlaps detected.
+        while (openRoomNodeQueue.Count > 0 && noRoomOverlaps == true)
+        {
+            // Get next room node from open room node queue.
+            RoomNodeSO roomNode = openRoomNodeQueue.Dequeue();
+
+            // Add child Nodes to queue from room node graph (with links to this parent Room)
+            foreach (RoomNodeSO childRoomNode in roomNodeGraph.GetChildRoomNodes(roomNode))
+            {
+                openRoomNodeQueue.Enqueue(childRoomNode);
+            }
+
+            // if the room is the entrance mark as positioned and add to room dictionary
+            if (roomNode.roomNodeType.isEntrance)
+            {
+                RoomTemplateSO roomTemplate = GetRandomRoomTemplate(roomNode.roomNodeType);
+
+                Room room = CreateRoomFromRoomTemplate(roomTemplate, roomNode);
+
+                room.isPositioned = true;
+
+                // Add room to room dictionary
+                dungeonBuilderRoomDictionary.Add(room.id, room);
+            }
+
+            // else if the room type isn't an entrance
+            else
+            {
+                // Else get parent room for node
+                Room parentRoom = dungeonBuilderRoomDictionary[roomNode.parentRoomNodeIDList[0]];
+
+                // See if room can be placed without overlaps
+                noRoomOverlaps = CanPlaceRoomWithNoOverlaps(roomNode, parentRoom);
+            }
+
+        }
+
+        return noRoomOverlaps;
+
+    }
+    /// <summary>
     /// Select a random room node graph from the list of room node graphs
     /// </summary>
     private RoomNodeGraphSO SelectRandomRoomNodeGraph(List<RoomNodeGraphSO> roomNodeGraphList)
