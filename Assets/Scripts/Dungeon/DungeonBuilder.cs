@@ -259,6 +259,21 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
         }
     }
     /// <summary>
+    /// Create deep copy of string list
+    /// </summary>
+    private List<string> CopyStringList(List<string> oldStringList)
+    {
+        List<string> newStringList = new List<string>();
+
+        foreach (string stringValue in oldStringList)
+        {
+            newStringList.Add(stringValue);
+        }
+
+        return newStringList;
+    }
+
+    /// <summary>
     /// Clear dungeon room gameobjects and dungeon room dictionary
     /// </summary>
     private void ClearDungeon()
