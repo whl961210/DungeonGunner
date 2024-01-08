@@ -421,6 +421,34 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
         return null;
 
     }
+    
+    /// <summary>
+    /// Check for rooms that overlap the upper and lower bounds parameters, and if there are overlapping rooms then return room else return null
+    /// </summary>
+    private Room CheckForRoomOverlap(Room roomToTest)
+    {
+        // Iterate through all rooms
+        foreach (KeyValuePair<string, Room> keyvaluepair in dungeonBuilderRoomDictionary)
+        {
+            Room room = keyvaluepair.Value;
+
+            // skip if same room as room to test or room hasn't been positioned
+            if (room.id == roomToTest.id || !room.isPositioned)
+                continue;
+
+            // If room overlaps
+            if (IsOverLappingRoom(roomToTest, room))
+            {
+                return room;
+            }
+        }
+
+
+        // Return
+        return null;
+
+    }
+
     /// <summary>
     /// Create room based on roomTemplate and layoutNode, and return the created room
     /// </summary>
