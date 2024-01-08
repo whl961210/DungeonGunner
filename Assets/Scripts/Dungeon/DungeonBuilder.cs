@@ -210,6 +210,59 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
 
     }
     /// <summary>
+    /// Attempt to place the room node in the dungeon - if room can be placed return the room, else return null
+    /// </summary>
+    private bool CanPlaceRoomWithNoOverlaps(RoomNodeSO roomNode, Room parentRoom)
+    {
+
+        // initialise and assume overlap until proven otherwise.
+        bool roomOverlaps = true;
+
+        // Do While Room Overlaps - try to place against all available doorways of the parent until
+        // the room is successfully placed without overlap.
+        while (roomOverlaps)
+        {
+            // Select random unconnected available doorway for Parent
+            List<Doorway> unconnectedAvailableParentDoorways = GetUnconnectedAvailableDoorways(parentRoom.doorWayList).ToList();
+
+            if (unconnectedAvailableParentDoorways.Count == 0)
+            {
+                // If no more doorways to try then overlap failure.
+                return false; // room overlaps
+            }
+
+            Doorway doorwayParent = unconnectedAvailableParentDoorways[UnityEngine.Random.Range(0, unconnectedAvailableParentDoorways.Count)];
+
+            // Get a random room template for room node that is consistent with the parent door orientation
+            RoomTemplateSO roomtemplate = GetRandomTemplateForRoomConsistentWithParent(roomNode, doorwayParent);
+
+            // Create a room
+            Room room = CreateRoomFromRoomTemplate(roomtemplate, roomNode);
+
+            // Place the room - returns true if the room doesn't overlap
+            if (PlaceTheRoom(parentRoom, doorwayParent, room))
+            {
+                // If room doesn't overlap then set to false to exit while loop
+                roomOverlaps = false;
+
+                // Mark room as positioned
+                room.isPositioned = true;
+
+                // Add room to dictionary
+                dungeonBuilderRoomDictionary.Add(room.id, room);
+
+            }
+            else
+            {
+                roomOverlaps = true;
+            }
+
+        }
+
+        return true;  // no room overlaps
+
+    }
+    /// <summary>
     /// Create room based on roomTemplate and layoutNode, and return the created room
     /// </summary>
     private Room CreateRoomFromRoomTemplate(RoomTemplateSO roomTemplate, RoomNodeSO roomNode)
