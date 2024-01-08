@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public class GameManager : SingletonMonobehavior<GameManager>
+public class GameManager : SingletonMonobehaviour<GameManager>
 {
     #region Header DUNGEON LEVELS
 
@@ -74,6 +74,14 @@ public class GameManager : SingletonMonobehavior<GameManager>
 
     private void PlayDungeonLevel(int dungeonLevelListIndex)
     {
+        // Build dungeon for level
+        bool dungeonBuiltSucessfully = DungeonBuilder.Instance.GenerateDungeon(dungeonLevelList[dungeonLevelListIndex]);
+
+        if (!dungeonBuiltSucessfully)
+        {
+            Debug.LogError("Couldn't build dungeon from specified rooms and node graphs");
+        }
+
 
     }
 
