@@ -316,6 +316,83 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
         return roomtemplate;
     }
     /// <summary>
+    /// Place the room - returns true if the room doesn't overlap, false otherwise
+    /// </summary>
+    private bool PlaceTheRoom(Room parentRoom, Doorway doorwayParent, Room room)
+    {
+
+        // Get current room doorway position
+        Doorway doorway = GetOppositeDoorway(doorwayParent, room.doorWayList);
+
+        // Return if no doorway in room opposite to parent doorway
+        if (doorway == null)
+        {
+            // Just mark the parent doorway as unavailable so we don't try and connect it again
+            doorwayParent.isUnavailable = true;
+
+            return false;
+        }
+
+        // Calculate 'world' grid parent doorway position
+        Vector2Int parentDoorwayPosition = parentRoom.lowerBounds + doorwayParent.position - parentRoom.templateLowerBounds;
+
+        Vector2Int adjustment = Vector2Int.zero;
+
+        // Calculate adjustment position offset based on room doorway position that we are trying to connect (e.g. if this doorway is west then we need to add (1,0) to the east parent doorway)
+
+        switch (doorway.orientation)
+        {
+            case Orientation.north:
+                adjustment = new Vector2Int(0, -1);
+                break;
+
+            case Orientation.east:
+                adjustment = new Vector2Int(-1, 0);
+                break;
+
+            case Orientation.south:
+                adjustment = new Vector2Int(0, 1);
+                break;
+
+            case Orientation.west:
+                adjustment = new Vector2Int(1, 0);
+                break;
+
+            case Orientation.none:
+                break;
+
+            default:
+                break;
+        }
+
+        // Calculate room lower bounds and upper bounds based on positioning to align with parent doorway
+        room.lowerBounds = parentDoorwayPosition + adjustment + room.templateLowerBounds - doorway.position;
+        room.upperBounds = room.lowerBounds + room.templateUpperBounds - room.templateLowerBounds;
+
+        Room overlappingRoom = CheckForRoomOverlap(room);
+
+        if (overlappingRoom == null)
+        {
+            // mark doorways as connected & unavailable
+            doorwayParent.isConnected = true;
+            doorwayParent.isUnavailable = true;
+
+            doorway.isConnected = true;
+            doorway.isUnavailable = true;
+
+            // return true to show rooms have been connected with no overlap
+            return true;
+        }
+        else
+        {
+            // Just mark the parent doorway as unavailable so we don't try and connect it again
+            doorwayParent.isUnavailable = true;
+
+            return false;
+        }
+
+    }
+    /// <summary>
     /// Create room based on roomTemplate and layoutNode, and return the created room
     /// </summary>
     private Room CreateRoomFromRoomTemplate(RoomTemplateSO roomTemplate, RoomNodeSO roomNode)
