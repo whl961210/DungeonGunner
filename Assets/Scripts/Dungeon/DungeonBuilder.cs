@@ -20,4 +20,5 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
         // Set dimmed material to fully visible
         GameResources.Instance.dimmedMaterial.SetFloat("Alpha_Slider", 1f);
     }
+    
 }
