@@ -259,6 +259,33 @@ public class DungeonBuilder : SingletonMonobehaviour<DungeonBuilder>
         }
     }
     /// <summary>
+    /// Create deep copy of doorway list
+    /// </summary>
+    private List<Doorway> CopyDoorwayList(List<Doorway> oldDoorwayList)
+    {
+        List<Doorway> newDoorwayList = new List<Doorway>();
+
+        foreach (Doorway doorway in oldDoorwayList)
+        {
+            Doorway newDoorway = new Doorway();
+
+            newDoorway.position = doorway.position;
+            newDoorway.orientation = doorway.orientation;
+            newDoorway.doorPrefab = doorway.doorPrefab;
+            newDoorway.isConnected = doorway.isConnected;
+            newDoorway.isUnavailable = doorway.isUnavailable;
+            newDoorway.doorwayStartCopyPosition = doorway.doorwayStartCopyPosition;
+            newDoorway.doorwayCopyTileWidth = doorway.doorwayCopyTileWidth;
+            newDoorway.doorwayCopyTileHeight = doorway.doorwayCopyTileHeight;
+
+            newDoorwayList.Add(newDoorway);
+        }
+
+        return newDoorwayList;
+    }
+
+
+    /// <summary>
     /// Create deep copy of string list
     /// </summary>
     private List<string> CopyStringList(List<string> oldStringList)
