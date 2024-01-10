@@ -15,15 +15,9 @@ using UnityEngine.Rendering;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [HideInInspector] public PlayerDetailsSO playerDetails;
+    [HideInInspector] public Health health;
+    [HideInInspector] public SpriteRenderer spriteRenderer;
+    [HideInInspector] public Animator animator;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
