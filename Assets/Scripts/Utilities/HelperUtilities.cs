@@ -57,4 +57,30 @@ public static class HelperUtilities
         }
         return error;
     }
+    /// <summary>
+    /// positive value debug check- if zero is allowed set isZeroAllowed to true. Returns true if there is an error
+    /// </summary>
+    public static bool ValidateCheckPositiveValue(Object thisObject, string fieldName, int valueToCheck, bool isZeroAllowed)
+    {
+        bool error = false;
+
+        if (isZeroAllowed)
+        {
+            if (valueToCheck < 0)
+            {
+                Debug.Log(fieldName + " must contain a positive value or zero in object " + thisObject.name.ToString());
+                error = true;
+            }
+        }
+        else
+        {
+            if (valueToCheck <= 0)
+            {
+                Debug.Log(fieldName + " must contain a positive value in object " + thisObject.name.ToString());
+                error = true;
+            }
+        }
+
+        return error;
+    }
 }
