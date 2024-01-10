@@ -36,4 +36,11 @@ public class Player : MonoBehaviour
         // Set player starting health
         SetPlayerHealth();
     }
+    /// <summary>
+    /// Set player health from playerDetails SO
+    /// </summary>
+    private void SetPlayerHealth()
+    {
+        health.SetStartingHealth(playerDetails.playerHealthAmount);
+    }
 }
