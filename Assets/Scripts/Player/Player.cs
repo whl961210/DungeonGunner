@@ -19,5 +19,11 @@ public class Player : MonoBehaviour
     [HideInInspector] public Health health;
     [HideInInspector] public SpriteRenderer spriteRenderer;
     [HideInInspector] public Animator animator;
-
+    private void Awake()
+    {
+        // Load components
+        health = GetComponent<Health>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+    }
 }
