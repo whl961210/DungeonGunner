@@ -16,6 +16,18 @@ public static class HelperUtilities
             return false;
         }
     }
+    /// <summary>
+    /// null value debug check
+    /// </summary>
+    public static bool ValidateCheckNullValue(Object thisObject, string fieldName, UnityEngine.Object objectToCheck)
+    {
+        if (objectToCheck == null)
+        {
+            Debug.Log(fieldName + " is null and must contain a value in object " + thisObject.name.ToString());
+            return true;
+        }
+        return false;
+    }
     public static bool ValidateCheckEnumerableValues(Object thisObject, string fileName, IEnumerable enumerableToCheck)
     {
         bool error = false;
