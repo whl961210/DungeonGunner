@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering;
 
 #region REQUIRE COMPONENTS
+[RequireComponent(typeof(Health))]
 [RequireComponent(typeof(SortingGroup))]
 [RequireComponent(typeof(SpriteRenderer))]
 [RequireComponent(typeof(Animator))]
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
     [HideInInspector] public Health health;
     [HideInInspector] public SpriteRenderer spriteRenderer;
     [HideInInspector] public Animator animator;
+
     private void Awake()
     {
         // Load components
@@ -26,6 +28,8 @@ public class Player : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
+
+
     /// <summary>
     /// Initialize the player
     /// </summary>
@@ -36,6 +40,7 @@ public class Player : MonoBehaviour
         // Set player starting health
         SetPlayerHealth();
     }
+
     /// <summary>
     /// Set player health from playerDetails SO
     /// </summary>
@@ -43,4 +48,5 @@ public class Player : MonoBehaviour
     {
         health.SetStartingHealth(playerDetails.playerHealthAmount);
     }
+
 }
